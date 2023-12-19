@@ -1,0 +1,141 @@
+[
+    {
+      "eventName": "Birthday Party",
+      "start": "2023-12-15T18:00:00Z",
+      "end": "2023-12-15T22:00:00Z",
+      "timeZone": "UTC-05:00",
+      "location": "123 Main St, Cityville",
+      "guests": [
+        {
+          "guestFirstName": "Alice",
+          "guestLastName": "Smith",
+          "guestEmail": "alice@example.com",
+          "timeZone": "UTC-05:00"
+        },
+        {
+          "guestFirstName": "Bob",
+          "guestLastName": "Johnson",
+          "guestEmail": "bob@example.com",
+          "timeZone": "UTC-05:00"
+        }
+      ],
+      "description": "Celebrate Alice's birthday with friends and family.",
+      "repetitiveness": "Yearly",
+      "reminders": [
+        {
+          "definitionOfDuration": "Days",
+          "amountOfTimeBefore": 1,
+          "reminderType": "Email"
+        },
+        {
+          "definitionOfDuration": "Hours",
+          "amountOfTimeBefore": 2,
+          "reminderType": "Alert"
+        }
+      ],
+      "availability": "Available"
+    },
+    {
+      "eventName": "Business Meeting",
+      "start": "2023-12-20T10:00:00Z",
+      "end": "2023-12-20T12:00:00Z",
+      "timeZone": "UTC+02:00",
+      "location": "Virtual Meeting",
+      "guests": [
+        {
+          "guestFirstName": "John",
+          "guestLastName": "Doe",
+          "guestEmail": "john@example.com",
+          "timeZone": "UTC+02:00"
+        },
+        {
+          "guestFirstName": "Jane",
+          "guestLastName": "Smith",
+          "guestEmail": "jane@example.com",
+          "timeZone": "UTC+02:00"
+        }
+      ],
+      "description": "Discuss quarterly business strategy and goals.",
+      "repetitiveness": "Once",
+      "reminders": [
+        {
+          "definitionOfDuration": "Days",
+          "amountOfTimeBefore": 1,
+          "reminderType": "Email"
+        },
+        {
+          "definitionOfDuration": "Hours",
+          "amountOfTimeBefore": 3,
+          "reminderType": "Alert"
+        }
+      ],
+      "availability": "Available"
+    },
+    {
+      "eventName": "Vacation in Hawaii",
+      "start": "2024-01-10T08:00:00Z",
+      "end": "2024-01-17T18:00:00Z",
+      "timeZone": "UTC-10:00",
+      "location": "Hawaii",
+      "guests": [
+        {
+          "guestFirstName": "David",
+          "guestLastName": "Johnson",
+          "guestEmail": "david@example.com",
+          "timeZone": "UTC-10:00"
+        }
+      ],
+      "description": "Relax and enjoy a week-long vacation in Hawaii.",
+      "repetitiveness": "Once",
+      "reminders": [
+        {
+          "definitionOfDuration": "Weeks",
+          "amountOfTimeBefore": 2,
+          "reminderType": "Email"
+        },
+        {
+          "definitionOfDuration": "Days",
+          "amountOfTimeBefore": 1,
+          "reminderType": "Alert"
+        }
+      ],
+      "availability": "Available"
+    },
+    {
+      "eventName": "Training Workshop",
+      "start": "2024-02-05T09:00:00Z",
+      "end": "2024-02-05T17:00:00Z",
+      "timeZone": "UTC-08:00",
+      "location": "Conference Room A",
+      "guests": [
+        {
+          "guestFirstName": "Emily",
+          "guestLastName": "Williams",
+          "guestEmail": "emily@example.com",
+          "timeZone": "UTC-08:00"
+        },
+        {
+          "guestFirstName": "Michael",
+          "guestLastName": "Davis",
+          "guestEmail": "michael@example.com",
+          "timeZone": "UTC-08:00"
+        }
+      ],
+      "description": "Conduct a full-day training workshop on new software tools.",
+      "repetitiveness": "Once",
+      "reminders": [
+        {
+          "definitionOfDuration": "Days",
+          "amountOfTimeBefore": 3,
+          "reminderType": "Alert"
+        },
+        {
+          "definitionOfDuration": "Hours",
+          "amountOfTimeBefore": 1,
+          "reminderType": "Email"
+        }
+      ],
+      "availability": "Available"
+    }
+  ]
+  
