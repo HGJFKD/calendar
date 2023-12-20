@@ -1,4 +1,7 @@
+import { Types } from "mongoose"
+
 export default interface Event {
+    _id?: Types.ObjectId
     eventName: string,
     start: Date,
     end: Date,

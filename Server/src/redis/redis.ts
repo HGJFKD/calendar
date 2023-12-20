@@ -1,15 +1,13 @@
 
 import { RedisCommandArgument } from '@redis/client/dist/lib/commands/index.js'
-import redis from 'redis'
-import { config } from "dotenv"
-;
-config()
+import * as redis from 'redis';
 
-const redisClient = redis.createClient()
+const redisClient = redis.createClient({ url: 'redis://localhost:6379' })
 
 const DEFAULT_EXPIRATION = 3600
 
 const getOrSetCache = (key: RedisCommandArgument, cd: () => Promise<any>) => {
+    redisClient.connect()
     return new Promise(async (resolve, reject) => {
         try {
             const [redisData, freshData] = await Promise.all([
@@ -27,7 +25,9 @@ const getOrSetCache = (key: RedisCommandArgument, cd: () => Promise<any>) => {
         } catch (error) {
             reject(error);
         }
+        redisClient.quit()
     });
+
 };
 
 

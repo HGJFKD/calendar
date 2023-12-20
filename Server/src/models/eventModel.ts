@@ -13,7 +13,7 @@ const eventSchema = new Schema<userEvents>(
         events: {
             type: [{
                 eventName: String,
-                stert: Date,
+                start: Date,
                 end: Date,
                 timeZone: String,
                 location: String,

@@ -17,7 +17,8 @@ export const resolvers = {
     Query: {
 
         getEventsByUser: async (parent: any, args: { input: inputGetEventsByUser }) => {
-            await eventDal.getEventsByUser(args.input)
+            const result = await eventDal.getEventsByUser(args.input)
+            return result
         },
     },
 

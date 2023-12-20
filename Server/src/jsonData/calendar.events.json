@@ -1,0 +1,685 @@
+[
+  {
+    "_id": {
+      "$oid": "657ee0d45e44148c61186c31"
+    },
+    "events": [],
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "657eea474cdac19c724b0910"
+    },
+    "first_name": "John",
+    "last_name": "Doe",
+    "email": "john.doe@example.com",
+    "timeZone": "UTC",
+    "password": "securepassword",
+    "events": [
+      {
+        "eventName": "Birthday Party",
+        "start": {
+          "$date": "2023-12-14T22:00:00.000Z"
+        },
+        "end": {
+          "$date": "2023-12-15T22:00:00.000Z"
+        },
+        "timeZone": "UTC-05:00",
+        "location": "123 Main St, Cityville",
+        "guests": [
+          {
+            "guestFirstName": "Alice",
+            "guestLastName": "Smith",
+            "guestEmail": "alice@example.com",
+            "timeZone": "UTC-05:00",
+            "_id": {
+              "$oid": "658018a99fd031b6d46dfcbd"
+            }
+          },
+          {
+            "guestFirstName": "Bob",
+            "guestLastName": "Johnson",
+            "guestEmail": "bob@example.com",
+            "timeZone": "UTC-05:00",
+            "_id": {
+              "$oid": "658018a99fd031b6d46dfcbe"
+            }
+          }
+        ],
+        "description": "Celebrate Alice's birthday with friends and family.",
+        "repetitiveness": "Yearly",
+        "reminders": [
+          {
+            "amountOftimeBefore": 1,
+            "ReminderType": "Email",
+            "_id": {
+              "$oid": "658018a99fd031b6d46dfcbf"
+            }
+          },
+          {
+            "amountOftimeBefore": 2,
+            "ReminderType": "Alert",
+            "_id": {
+              "$oid": "658018a99fd031b6d46dfcc0"
+            }
+          }
+        ],
+        "availability": "Available",
+        "_id": {
+          "$oid": "658018a99fd031b6d46dfcbc"
+        }
+      },
+      {
+        "eventName": "Business Meeting",
+        "start": {
+          "$date": "2023-12-11T22:00:00.000Z"
+        },
+        "end": {
+          "$date": "2023-12-20T12:00:00.000Z"
+        },
+        "timeZone": "UTC+02:00",
+        "location": "Virtual Meeting",
+        "guests": [
+          {
+            "guestFirstName": "John",
+            "guestLastName": "Doe",
+            "guestEmail": "john@example.com",
+            "timeZone": "UTC+02:00",
+            "_id": {
+              "$oid": "65801b8526d5d345f216661c"
+            }
+          },
+          {
+            "guestFirstName": "Jane",
+            "guestLastName": "Smith",
+            "guestEmail": "jane@example.com",
+            "timeZone": "UTC+02:00",
+            "_id": {
+              "$oid": "65801b8526d5d345f216661d"
+            }
+          }
+        ],
+        "description": "Discuss quarterly business strategy and goals.",
+        "repetitiveness": "Once",
+        "reminders": [
+          {
+            "amountOftimeBefore": 1,
+            "ReminderType": "Email",
+            "_id": {
+              "$oid": "65801b8526d5d345f216661e"
+            }
+          },
+          {
+            "amountOftimeBefore": 3,
+            "ReminderType": "Alert",
+            "_id": {
+              "$oid": "65801b8526d5d345f216661f"
+            }
+          }
+        ],
+        "availability": "Available",
+        "_id": {
+          "$oid": "65801b8526d5d345f216661b"
+        }
+      },
+      {
+        "eventName": "Business Meeting",
+        "start": {
+          "$date": "2023-12-18T22:00:00.000Z"
+        },
+        "end": {
+          "$date": "2023-12-20T12:00:00.000Z"
+        },
+        "timeZone": "UTC+02:00",
+        "location": "Virtual Meeting",
+        "guests": [
+          {
+            "guestFirstName": "John",
+            "guestLastName": "Doe",
+            "guestEmail": "john@example.com",
+            "timeZone": "UTC+02:00",
+            "_id": {
+              "$oid": "65801c20a45080e6efd1c2d0"
+            }
+          },
+          {
+            "guestFirstName": "Jane",
+            "guestLastName": "Smith",
+            "guestEmail": "jane@example.com",
+            "timeZone": "UTC+02:00",
+            "_id": {
+              "$oid": "65801c20a45080e6efd1c2d1"
+            }
+          }
+        ],
+        "description": "Discuss quarterly business strategy and goals.",
+        "repetitiveness": "Once",
+        "reminders": [
+          {
+            "amountOftimeBefore": 1,
+            "ReminderType": "Email",
+            "_id": {
+              "$oid": "65801c20a45080e6efd1c2d2"
+            }
+          },
+          {
+            "amountOftimeBefore": 3,
+            "ReminderType": "Alert",
+            "_id": {
+              "$oid": "65801c20a45080e6efd1c2d3"
+            }
+          }
+        ],
+        "availability": "Available",
+        "_id": {
+          "$oid": "65801c20a45080e6efd1c2cf"
+        }
+      },
+      {
+        "eventName": "Business Meeting",
+
+        "start": {
+          "$date": "2023-12-20T22:00:00.000Z"
+        },
+        "end": {
+          "$date": "2023-12-20T12:00:00.000Z"
+        },
+        "timeZone": "UTC+02:00",
+        "location": "Virtual Meeting",
+        "guests": [
+          {
+            "guestFirstName": "John",
+            "guestLastName": "Doe",
+            "guestEmail": "john@example.com",
+            "timeZone": "UTC+02:00",
+            "_id": {
+              "$oid": "65801d38a45080e6efd1c2e5"
+            }
+          },
+          {
+            "guestFirstName": "Jane",
+            "guestLastName": "Smith",
+            "guestEmail": "jane@example.com",
+            "timeZone": "UTC+02:00",
+            "_id": {
+              "$oid": "65801d38a45080e6efd1c2e6"
+            }
+          }
+        ],
+        "description": "Discuss quarterly business strategy and goals.",
+        "repetitiveness": "Once",
+        "reminders": [
+          {
+            "amountOftimeBefore": 1,
+            "ReminderType": "Email",
+            "_id": {
+              "$oid": "65801d38a45080e6efd1c2e7"
+            }
+          },
+          {
+            "amountOftimeBefore": 3,
+            "ReminderType": "Alert",
+            "_id": {
+              "$oid": "65801d38a45080e6efd1c2e8"
+            }
+          }
+        ],
+        "availability": "Available",
+        "_id": {
+          "$oid": "65801d38a45080e6efd1c2e4"
+        }
+      },
+      {
+        "eventName": "Business Meeting",
+        "end": {
+          "$date": "2023-12-20T12:00:00.000Z"
+        },
+        "timeZone": "UTC+02:00",
+        "location": "Virtual Meeting",
+        "guests": [
+          {
+            "guestFirstName": "John",
+            "guestLastName": "Doe",
+            "guestEmail": "john@example.com",
+            "timeZone": "UTC+02:00",
+            "_id": {
+              "$oid": "65801d56124c8e19d71746ee"
+            }
+          },
+          {
+            "guestFirstName": "Jane",
+            "guestLastName": "Smith",
+            "guestEmail": "jane@example.com",
+            "timeZone": "UTC+02:00",
+            "_id": {
+              "$oid": "65801d56124c8e19d71746ef"
+            }
+          }
+        ],
+        "description": "Discuss quarterly business strategy and goals.",
+        "repetitiveness": "Once",
+        "reminders": [
+          {
+            "amountOftimeBefore": 1,
+            "ReminderType": "Email",
+            "_id": {
+              "$oid": "65801d56124c8e19d71746f0"
+            }
+          },
+          {
+            "amountOftimeBefore": 3,
+            "ReminderType": "Alert",
+            "_id": {
+              "$oid": "65801d56124c8e19d71746f1"
+            }
+          }
+        ],
+        "availability": "Available",
+        "_id": {
+          "$oid": "65801d56124c8e19d71746ed"
+        }
+      },
+      {
+        "eventName": "Business Meeting",
+        "end": {
+          "$date": "2023-12-20T12:00:00.000Z"
+        },
+        "timeZone": "UTC+02:00",
+        "location": "Virtual Meeting",
+        "guests": [
+          {
+            "guestFirstName": "John",
+            "guestLastName": "Doe",
+            "guestEmail": "john@example.com",
+            "timeZone": "UTC+02:00",
+            "_id": {
+              "$oid": "65801d83aaa0849da9a79790"
+            }
+          },
+          {
+            "guestFirstName": "Jane",
+            "guestLastName": "Smith",
+            "guestEmail": "jane@example.com",
+            "timeZone": "UTC+02:00",
+            "_id": {
+              "$oid": "65801d83aaa0849da9a79791"
+            }
+          }
+        ],
+        "description": "Discuss quarterly business strategy and goals.",
+        "repetitiveness": "Once",
+        "reminders": [
+          {
+            "amountOftimeBefore": 1,
+            "ReminderType": "Email",
+            "_id": {
+              "$oid": "65801d83aaa0849da9a79792"
+            }
+          },
+          {
+            "amountOftimeBefore": 3,
+            "ReminderType": "Alert",
+            "_id": {
+              "$oid": "65801d83aaa0849da9a79793"
+            }
+          }
+        ],
+        "availability": "Available",
+        "_id": {
+          "$oid": "65801d83aaa0849da9a7978f"
+        }
+      },
+      {
+        "eventName": "Business Meeting",
+        "end": {
+          "$date": "2023-12-20T12:00:00.000Z"
+        },
+        "timeZone": "UTC+02:00",
+        "location": "Virtual Meeting",
+        "guests": [
+          {
+            "guestFirstName": "John",
+            "guestLastName": "Doe",
+            "guestEmail": "john@example.com",
+            "timeZone": "UTC+02:00",
+            "_id": {
+              "$oid": "65801dbbfedc4d8f052204d8"
+            }
+          },
+          {
+            "guestFirstName": "Jane",
+            "guestLastName": "Smith",
+            "guestEmail": "jane@example.com",
+            "timeZone": "UTC+02:00",
+            "_id": {
+              "$oid": "65801dbbfedc4d8f052204d9"
+            }
+          }
+        ],
+        "description": "Discuss quarterly business strategy and goals.",
+        "repetitiveness": "Once",
+        "reminders": [
+          {
+            "amountOftimeBefore": 1,
+            "ReminderType": "Email",
+            "_id": {
+              "$oid": "65801dbbfedc4d8f052204da"
+            }
+          },
+          {
+            "amountOftimeBefore": 3,
+            "ReminderType": "Alert",
+            "_id": {
+              "$oid": "65801dbbfedc4d8f052204db"
+            }
+          }
+        ],
+        "availability": "Available",
+        "_id": {
+          "$oid": "65801dbbfedc4d8f052204d7"
+        }
+      },
+      {
+        "eventName": "Business Meeting",
+        "end": {
+          "$date": "2023-12-20T12:00:00.000Z"
+        },
+        "timeZone": "UTC+02:00",
+        "location": "Virtual Meeting",
+        "guests": [
+          {
+            "guestFirstName": "John",
+            "guestLastName": "Doe",
+            "guestEmail": "john@example.com",
+            "timeZone": "UTC+02:00",
+            "_id": {
+              "$oid": "65801f0195133af319f50a36"
+            }
+          },
+          {
+            "guestFirstName": "Jane",
+            "guestLastName": "Smith",
+            "guestEmail": "jane@example.com",
+            "timeZone": "UTC+02:00",
+            "_id": {
+              "$oid": "65801f0195133af319f50a37"
+            }
+          }
+        ],
+        "description": "Discuss quarterly business strategy and goals.",
+        "repetitiveness": "Once",
+        "reminders": [
+          {
+            "amountOftimeBefore": 1,
+            "ReminderType": "Email",
+            "_id": {
+              "$oid": "65801f0195133af319f50a38"
+            }
+          },
+          {
+            "amountOftimeBefore": 3,
+            "ReminderType": "Alert",
+            "_id": {
+              "$oid": "65801f0195133af319f50a39"
+            }
+          }
+        ],
+        "availability": "Available",
+        "_id": {
+          "$oid": "65801f0195133af319f50a35"
+        }
+      },
+      {
+        "eventName": "Business Meeting",
+        "end": {
+          "$date": "2023-12-20T12:00:00.000Z"
+        },
+        "timeZone": "UTC+02:00",
+        "location": "Virtual Meeting",
+        "guests": [
+          {
+            "guestFirstName": "John",
+            "guestLastName": "Doe",
+            "guestEmail": "john@example.com",
+            "timeZone": "UTC+02:00",
+            "_id": {
+              "$oid": "658025f8c1e803fba8f84fac"
+            }
+          },
+          {
+            "guestFirstName": "Jane",
+            "guestLastName": "Smith",
+            "guestEmail": "jane@example.com",
+            "timeZone": "UTC+02:00",
+            "_id": {
+              "$oid": "658025f8c1e803fba8f84fad"
+            }
+          }
+        ],
+        "description": "Discuss quarterly business strategy and goals.",
+        "repetitiveness": "Once",
+        "reminders": [
+          {
+            "amountOftimeBefore": 1,
+            "ReminderType": "Email",
+            "_id": {
+              "$oid": "658025f8c1e803fba8f84fae"
+            }
+          },
+          {
+            "amountOftimeBefore": 3,
+            "ReminderType": "Alert",
+            "_id": {
+              "$oid": "658025f8c1e803fba8f84faf"
+            }
+          }
+        ],
+        "availability": "Available",
+        "_id": {
+          "$oid": "658025f8c1e803fba8f84fab"
+        }
+      },
+      {
+        "eventName": "Business Meeting",
+        "end": {
+          "$date": "2023-12-20T12:00:00.000Z"
+        },
+        "timeZone": "UTC+02:00",
+        "location": "Virtual Meeting",
+        "guests": [
+          {
+            "guestFirstName": "John",
+            "guestLastName": "Doe",
+            "guestEmail": "john@example.com",
+            "timeZone": "UTC+02:00",
+            "_id": {
+              "$oid": "658027a9ff7a808b9d6d58f1"
+            }
+          },
+          {
+            "guestFirstName": "Jane",
+            "guestLastName": "Smith",
+            "guestEmail": "jane@example.com",
+            "timeZone": "UTC+02:00",
+            "_id": {
+              "$oid": "658027a9ff7a808b9d6d58f2"
+            }
+          }
+        ],
+        "description": "Discuss quarterly business strategy and goals.",
+        "repetitiveness": "Once",
+        "reminders": [
+          {
+            "amountOftimeBefore": 1,
+            "ReminderType": "Email",
+            "_id": {
+              "$oid": "658027a9ff7a808b9d6d58f3"
+            }
+          },
+          {
+            "amountOftimeBefore": 3,
+            "ReminderType": "Alert",
+            "_id": {
+              "$oid": "658027a9ff7a808b9d6d58f4"
+            }
+          }
+        ],
+        "availability": "Available",
+        "_id": {
+          "$oid": "658027a9ff7a808b9d6d58f0"
+        }
+      },
+      {
+        "eventName": "Business Meeting",
+        "end": {
+          "$date": "2023-12-20T12:00:00.000Z"
+        },
+        "timeZone": "UTC+02:00",
+        "location": "Virtual Meeting",
+        "guests": [
+          {
+            "guestFirstName": "John",
+            "guestLastName": "Doe",
+            "guestEmail": "john@example.com",
+            "timeZone": "UTC+02:00",
+            "_id": {
+              "$oid": "658028ff24be3947f9693c1d"
+            }
+          },
+          {
+            "guestFirstName": "Jane",
+            "guestLastName": "Smith",
+            "guestEmail": "jane@example.com",
+            "timeZone": "UTC+02:00",
+            "_id": {
+              "$oid": "658028ff24be3947f9693c1e"
+            }
+          }
+        ],
+        "description": "Discuss quarterly business strategy and goals.",
+        "repetitiveness": "Once",
+        "reminders": [
+          {
+            "amountOftimeBefore": 1,
+            "ReminderType": "Email",
+            "_id": {
+              "$oid": "658028ff24be3947f9693c1f"
+            }
+          },
+          {
+            "amountOftimeBefore": 3,
+            "ReminderType": "Alert",
+            "_id": {
+              "$oid": "658028ff24be3947f9693c20"
+            }
+          }
+        ],
+        "availability": "Available",
+        "_id": {
+          "$oid": "658028ff24be3947f9693c1c"
+        }
+      },
+      {
+        "eventName": "Business Meeting",
+        "end": {
+          "$date": "2023-12-20T12:00:00.000Z"
+        },
+        "timeZone": "UTC+02:00",
+        "location": "Virtual Meeting",
+        "guests": [
+          {
+            "guestFirstName": "John",
+            "guestLastName": "Doe",
+            "guestEmail": "john@example.com",
+            "timeZone": "UTC+02:00",
+            "_id": {
+              "$oid": "658029bd24be3947f9693c92"
+            }
+          },
+          {
+            "guestFirstName": "Jane",
+            "guestLastName": "Smith",
+            "guestEmail": "jane@example.com",
+            "timeZone": "UTC+02:00",
+            "_id": {
+              "$oid": "658029bd24be3947f9693c93"
+            }
+          }
+        ],
+        "description": "Discuss quarterly business strategy and goals.",
+        "repetitiveness": "Once",
+        "reminders": [
+          {
+            "amountOftimeBefore": 1,
+            "ReminderType": "Email",
+            "_id": {
+              "$oid": "658029bd24be3947f9693c94"
+            }
+          },
+          {
+            "amountOftimeBefore": 3,
+            "ReminderType": "Alert",
+            "_id": {
+              "$oid": "658029bd24be3947f9693c95"
+            }
+          }
+        ],
+        "availability": "Available",
+        "_id": {
+          "$oid": "658029bd24be3947f9693c91"
+        }
+      },
+      {
+        "eventName": "Business Meeting",
+        "end": {
+          "$date": "2023-12-20T12:00:00.000Z"
+        },
+        "timeZone": "UTC+02:00",
+        "location": "Virtual Meeting",
+        "guests": [
+          {
+            "guestFirstName": "John",
+            "guestLastName": "Doe",
+            "guestEmail": "john@example.com",
+            "timeZone": "UTC+02:00",
+            "_id": {
+              "$oid": "65802b622f35599c4d47ce87"
+            }
+          },
+          {
+            "guestFirstName": "Jane",
+            "guestLastName": "Smith",
+            "guestEmail": "jane@example.com",
+            "timeZone": "UTC+02:00",
+            "_id": {
+              "$oid": "65802b622f35599c4d47ce88"
+            }
+          }
+        ],
+        "description": "Discuss quarterly business strategy and goals.",
+        "repetitiveness": "Once",
+        "reminders": [
+          {
+            "amountOftimeBefore": 1,
+            "ReminderType": "Email",
+            "_id": {
+              "$oid": "65802b622f35599c4d47ce89"
+            }
+          },
+          {
+            "amountOftimeBefore": 3,
+            "ReminderType": "Alert",
+            "_id": {
+              "$oid": "65802b622f35599c4d47ce8a"
+            }
+          }
+        ],
+        "availability": "Available",
+        "_id": {
+          "$oid": "65802b612f35599c4d47ce86"
+        }
+      }
+    ],
+    "__v": 0
+  }
+]

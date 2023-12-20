@@ -67,6 +67,7 @@ export const typeDefs = gql`
   }
 
   type Event {
+    _id: String
     eventName: String
     start: Date
     end: Date
@@ -154,4 +155,9 @@ type eventsResponse {
     # delete
     deleteEvent(input: inputDeleltEvent): DeleteEventResponse
   }
+
+  type Subscription {
+    messages: String
+  }
+  
 `;

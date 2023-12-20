@@ -26,15 +26,11 @@ const getEventsByUser = async (input: inputGetEventsByUser)
         await userDal.findUserById(userId);
 
 
-        const res = Redis.redisClient.on('ready', async () => {
-            await Redis.getOrSetCache(`events?_id=${userId}`, async () => {
-                const data = await eventModel.findById(userId).exec();
-                console.log("data:", data);
-                return data;
-
-            })
+        const res = await Redis.getOrSetCache(`events?_id=${userId}`, async () => {
+            const data = await eventModel.findById(userId).exec();
+            console.log("data:", data);
+            return data;
         })
-
         console.log(res);
 
         return res as unknown as userEvents
