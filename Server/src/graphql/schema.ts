@@ -3,7 +3,7 @@ import { gql } from 'apollo-server-express'
 import { GraphQLScalarType, Kind } from 'graphql';
 
 export const typeDefs = gql`
-    scalar Date
+  scalar Date
 
 # Type event
   enum AvailabilityEnum {
@@ -157,7 +157,7 @@ type eventsResponse {
   }
 
   type Subscription {
-    messages: String
+    calendar: Event
   }
   
 `;

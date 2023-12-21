@@ -1,10 +1,10 @@
-/// <reference path="../process-env.d.ts" />
+
 
 import express from 'express';
 import cors from 'cors'
 import morgan from "morgan";
 import http from 'http';
-import dotenv from 'dotenv';
+import { config } from 'dotenv';
 
 import { ApolloServer } from '@apollo/server';
 import { expressMiddleware } from '@apollo/server/express4';
@@ -16,17 +16,26 @@ import { WebSocketServer } from "ws";
 import { useServer } from "graphql-ws/lib/use/ws";
 import bodyParser from 'body-parser';
 
+import { getMessageFromKafka } from "./kafka/consumer.js";
+import sendKafkaMessage from "./kafka/utils.js";
+import kafka from "./kafka/kafkaInstance.js";
+import producer from "./kafka/producer.js";
+
 import { typeDefs } from './graphql/schema.js';
 import { resolvers } from './graphql/resolves.js';
 import connectToMongoDb from './configs/connectToMongoDB.js';
 
-
 const app = express();
 
-dotenv.config();
+config();
+
+console.log(process.env.SERVER_PORT);
+
+const port = process.env.SERVER_PORT || 4000;
 
 app.use(express.json());
-app.use(cors({}));
+app.use(express.urlencoded({ extended: true }));
+app.use(cors<cors.CorsRequest>());
 app.use(morgan('dev'));
 
 const httpServer = http.createServer(app);
@@ -68,25 +77,33 @@ const apolloServer = new ApolloServer({
 
 const wsServer = new WebSocketServer({
     server: httpServer,
-    path: "/graphql",
+    path: "/calendar",
 });
 
 const wsServerCleanup = useServer({ schema }, wsServer);
 
-(async function () {
 
+(async function () {
     await apolloServer.start();
-    await connectToMongoDb();
+    connectToMongoDb();
     app.use("/calendar", bodyParser.json(), expressMiddleware(apolloServer));
 
+
+
+
 })();
-
-
-const port = process.env.SERVER_PORT || 4000;
 
 httpServer.listen(port, () => {
     console.log(`🚀 Query endpoint ready at http://localhost:${port}/calendar`);
     console.log(
         `🚀 Subscription endpoint ready at ws://localhost:${port}/subscriptions`
     );
-});
+
+    sendKafkaMessage(producer, "test-topic", "Hello KafkaJS user!")
+        .then(() => {
+            console.log(`Connected Successful To Kafka`);
+            getMessageFromKafka(kafka, "test-group", "test-topic")
+        })
+        .catch((err) => console.log(`GetMessageFromKafka Error: ${err.message}`))
+        .catch((error) => console.log(`Connect To Kafka Error: ${error}`))
+})

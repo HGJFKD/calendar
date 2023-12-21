@@ -1,4 +1,5 @@
 import { Schema, Types } from "mongoose"
+import Event from './event.js';
 
 export type inputGetEventsByUser = {
     userId: Types.ObjectId

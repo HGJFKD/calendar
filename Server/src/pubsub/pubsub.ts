@@ -2,12 +2,9 @@ import { RedisPubSub } from "graphql-redis-subscriptions";
 
 const pubsub = new RedisPubSub({
     connection: {
-        host: process.env.REDIS_HOST || undefined,
-        port: Number(process.env.REDIS_PORT) || undefined,
-        password: process.env.REDIS_PASSWORD || undefined,        
-    },
+        host: 'localhost',
+        port: 6379,
+    }
 });
-
-
 
 export default pubsub;

@@ -1,4 +1,4 @@
-import { Schema } from "mongoose"
+import { Schema, Types } from "mongoose"
 import {
     inputAddOrUpdateEvent,
     inputDeleltEvent,
@@ -10,27 +10,42 @@ import STATUS_CODES from "../utils/StatusCodes.js"
 import { userEvents } from "../types/user.js"
 import Redis from "../redis/redis.js"
 import userDal from "./userDal.js"
+import Event from '../types/event.js';
 
+
+const throwErrorIfNotUserId = () => {
+    throw new RequestError(
+        'Field userId is Required',
+        STATUS_CODES.BAD_REQUEST
+    )
+}
+
+// Get all events by user func
 const getEventsByUser = async (input: inputGetEventsByUser)
     : Promise<userEvents | null> => {
     const { userId } = input
+
+    // throw error if not userId
+    if (!userId) {
+        throwErrorIfNotUserId()
+    }
+
     try {
-        if (!userId) {
-            throw new RequestError(
-                'Field userId is Required',
-                STATUS_CODES.BAD_REQUEST
-            )
-        }
 
         // Check if the user exists
         await userDal.findUserById(userId);
 
+        // Get or set from redis or db
+        const res = await Redis.getOrSetCache(
 
-        const res = await Redis.getOrSetCache(`events?_id=${userId}`, async () => {
-            const data = await eventModel.findById(userId).exec();
-            console.log("data:", data);
-            return data;
-        })
+            // First argument to search at redis
+            `events?_id=${userId}`,
+
+            // Second argument cb func, if not in redis
+            async () => {
+                const data = await eventModel.findById(userId).exec();
+                return data;
+            })
         console.log(res);
 
         return res as unknown as userEvents
@@ -43,30 +58,51 @@ const getEventsByUser = async (input: inputGetEventsByUser)
     }
 }
 
+
 const addEvent = async (input: inputAddOrUpdateEvent)
     : Promise<userEvents | null> => {
     const { event, userDetails } = input
     const { userId } = userDetails
 
-    try {
+    // throw error if not userId
+    if (!userId) {
+        throwErrorIfNotUserId()
+    }
 
-        if (!userId) {
-            throw new RequestError(
-                'Field userId is Required',
-                STATUS_CODES.BAD_REQUEST
-            )
-        }
+    try {
 
         // Check if the user exists
         await userDal.findUserById(userId);
 
-        const res = await eventModel.findByIdAndUpdate(
-            userDetails.userId,
-            { $push: { events: event } },
-            { new: true }
-        ).exec();
+        const res = await Redis.getOrSetCache(
 
-        return res as unknown as userEvents;
+            // First argument to search at redis
+            `events?_id=${userId}`,
+
+            // Second argument cb func, if not in redis
+            async () => {
+                const user = await eventModel.findByIdAndUpdate(
+                    userDetails.userId,
+                    { $push: { events: event } },
+                    { new: true }
+                ).exec();
+
+                if (!user) {
+                    throw new RequestError(
+                      `Error adding event to User: ${userDetails.userEmail}`,
+                      STATUS_CODES.INTERNAL_SERVER_ERROR
+                    );
+                  }
+                return user
+            },
+
+            // Third argument, optionall cb argument:
+            // if there are at redis: do this operation below
+
+            await Redis.processEvent(userId, event)
+        )
+
+        return res as unknown as userEvents
 
     } catch (error) {
         throw new RequestError(
@@ -85,6 +121,7 @@ const deleteEvent = async (input: inputDeleltEvent): Promise<Schema.Types.Object
 }
 
 const eventDal = {
+    throwErrorIfNotUserId,
     getEventsByUser,
     addEvent,
     updateEvent,
